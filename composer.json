@@ -1,0 +1,24 @@
+{
+    "name": "delz/ys7",
+    "description": "萤石云开放平台PHP SDK",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "徐威",
+            "email": "sheawey@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0",
+        "delz/common": "dev-master",
+        "delz/cache": "dev-master",
+        "guzzlehttp/guzzle": "~6.2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Delz\\Ys7\\": "src/Delz/Ys7"
+        }
+    }
+}
