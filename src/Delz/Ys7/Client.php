@@ -87,7 +87,7 @@ class Client
 
         $result = $this->post(self::API_ENDPOINT . '/token/get', $params, false);
 
-        $accessToken = new AccessToken($result['accessToken'], $result['expireTime'] - 10000);
+        $accessToken = new AccessToken($result['data']['accessToken'], $result['data']['expireTime'] - 10000);
 
         //缓存永久存储，lifetime设为0
         $this->cache->set($cacheKey, $accessToken);
@@ -173,7 +173,7 @@ class Client
         if ($result['code'] !== '200') {
             throw new Ys7Exception((int)$result['msg'], $result['code']);
         }
-        return isset($result['data']) ? $result['data'] : true;
+        return $result;
     }
 
 }
